@@ -1,0 +1,87 @@
+.container_div {
+
+    text-align: center;
+
+
+}
+.filter{
+            width: 200px;
+            height: 40px;
+            border-radius: 12px;
+            margin-top: 5%;
+            text-align: center;
+            font-size: 20px;
+}
+.search{
+             width: 200px;
+            height: 40px;
+            border-radius: 12px;
+            margin-top: 5%;
+            text-align: center;
+            font-size:20px;
+}
+.userTable {
+
+    margin-top: 1.5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.userTable th {
+    background-color: rgb(145, 209, 17);
+  
+    padding: 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(46, 41, 41);
+}
+
+.userTable th:hover {
+    color: rgb(145, 209, 17);
+
+}
+
+.userTable td {
+    background-color: green;
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+}
+
+.userTable td:hover {
+color: black;
+}
+
+.userTable img {
+    border-radius: 50%;
+    height: 60px;
+}
+
+.pagination_container {
+    margin-top: 2%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.pagination_container {
+    text-align: center;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5%;
+    margin-bottom: 2%;
+}
+
+.pagination>button {
+    padding: 0.5%;
+    border-radius: 6px;
+    background-color:rgb(10, 99, 99);
+    cursor: pointer;
+}
+
+.pagination>button:hover {
+    background-color: rgb(10, 99, 99);
+}
