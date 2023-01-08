@@ -13,7 +13,7 @@ const Home = () => {
   }, []);
   const getBlogs = () => {
     axios
-      .get("http://localhost:8080/user")
+      .get("https://cointab-backend-rama.onrender.com/user")
       .then((res) => {
         let arr = res.data.blogs;
         if (arr.length === 0) {
