@@ -20,7 +20,8 @@ const Users = () => {
     getDataFunction();
   }, [activePage]);
   const getDataFunction = () => {
-    axios.get(`http://localhost:8080/user?page=${activePage}`)
+    axios
+      .get(`https://cointab-backend-rama.onrender.com/user?page=${activePage}`)
       .then((res) => {
         settotalPages(res.data.totalPages);
         setData(res.data.blogs);
@@ -39,10 +40,13 @@ const Users = () => {
   };
 
   const filterByGender = (e) => {
-    axios.get(`http://localhost:8080/user/search/${e.target.value}`)
+    axios
+      .get(
+        `https://cointab-backend-rama.onrender.com/user/search/${e.target.value}`
+      )
       .then((res) => {
         setData(res.data);
-        console.log(res.data)
+        console.log(res.data);
         console.log(e.target.value);
         if (e.target.value === "Filter by Gender") {
           getDataFunction();

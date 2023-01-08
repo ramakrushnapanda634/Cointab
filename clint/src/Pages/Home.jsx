@@ -6,30 +6,34 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
  
 const Home = () => {
- const navigate = useNavigate();
+  const navigate = useNavigate();
   const [success, setSuccess] = useState(false);
- useEffect(() => {
-   getBlogs();
- }, []);
-const getBlogs = () => {
-  axios.get("http://localhost:8080/user")
-    .then((res) => {
-      let arr = res.data.blogs;
-      if (arr.length === 0) {
-        setSuccess(false);
-        getBlogs();
-      } else {
-        setSuccess(true);
-      }
-    })
-    .catch((e) => console.log(e));
-};
+  useEffect(() => {
+    getBlogs();
+  }, []);
+  const getBlogs = () => {
+    axios
+      .get("http://localhost:8080/user")
+      .then((res) => {
+        let arr = res.data.blogs;
+        if (arr.length === 0) {
+          setSuccess(false);
+          getBlogs();
+        } else {
+          setSuccess(true);
+        }
+      })
+      .catch((e) => console.log(e));
+  };
+  //http://localhost:8080
   const fetchUsers = () => {
-    if (success=== false) {
-      axios.post("http://localhost:8080/user").then((res) => {
-        getBlogs();
-        setSuccess(true);
-      });
+    if (success === false) {
+      axios
+        .post("https://cointab-backend-rama.onrender.com/user")
+        .then((res) => {
+          getBlogs();
+          setSuccess(true);
+        });
       toast.success("Successfully Data Added");
     } else {
       toast.error("Data Already Present");
@@ -37,18 +41,18 @@ const getBlogs = () => {
   };
   const deleteUsers = () => {
     if (success === true) {
-      axios.delete("http://localhost:8080/user").then((res) => {
-        getBlogs();
-      });
+      axios
+        .delete("https://cointab-backend-rama.onrender.com/user")
+        .then((res) => {
+          getBlogs();
+        });
       toast.success("Data Successfully Deleted");
     } else {
       toast.success("Data is Empty");
     }
   };
-   const UserDetails= () => {
-    
+  const UserDetails = () => {
     navigate("/users");
-    
   };
   return (
     <>
